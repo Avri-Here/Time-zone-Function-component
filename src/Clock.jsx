@@ -7,7 +7,9 @@ export const Clock = (props) => {
     SetInterval: 1000,
   });
   useEffect(() => {
+    // why you dont use in funciton below
     if (props.StateDad.Interval === 1000) {
+      // need to think another solution
       setTimeout(() => {
         setState({
           ...state,
@@ -75,6 +77,7 @@ export const Clock = (props) => {
       }),
     });
   }
+  // better to put style on css file
   return (
     <div>
       <h1 style={{ marginTop: 1 + "vw", marginBottom: 0 + "vw" }}>
