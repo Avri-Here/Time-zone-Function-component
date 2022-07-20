@@ -9,6 +9,7 @@ export const App = () => {
   });
   function Reset() {
     setState({ ...state, Interval: 1000 });
+    // need to think on solution without setTimeout
     setTimeout(() => {
       setState({ ...state, Interval: null });
     }, 1);
@@ -29,6 +30,7 @@ export const App = () => {
     <>
       <h1 style={{ marginBottom: 0 + "vw" }}>Full control here!</h1>
       <h1 style={{ marginTop: 1.5 + "vw" }}>
+        
         <button onClick={Reset} style={{ marginRight: 2 + "vw" }}>
           Reset all setIntervals time !
         </button>
@@ -40,6 +42,7 @@ export const App = () => {
         </button>
       </h1>
       <hr />
+            // better to push all to array
       <Clock Tinezone={"Asia/Jerusalem"} StateDad={state} />
       <Clock Tinezone={"America/Argentina/Buenos_Aires"} StateDad={state} />
       <Clock Tinezone={"America/New_York"} StateDad={state} />
